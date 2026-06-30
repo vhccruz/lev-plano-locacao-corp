@@ -142,32 +142,44 @@ Setor que **aluga bicicletas (e e-bikes) para empresas** mediante **mensalidade 
 
 Um módulo de intranet em `/intranet/locacao` que digitaliza o ciclo completo da locação corporativa: **cliente/contrato/frota → entrada de demanda → OS de campo → orçamento/aprovação → execução com controle de peças → faturamento → painéis**. Mobile-first para o mecânico, desktop para Carol/Fábio/financeiro.
 
+O fluxo de ponta a ponta — da demanda do cliente até a cobrança — com os papéis e os pontos de decisão:
+
 ```mermaid
 flowchart TD
-    subgraph Entrada["1. Entrada de demanda"]
-      WA[Grupo WhatsApp cliente] --> DESK
-      VOLL[VOLL / chamado] --> DESK
-      CHAT[Chatbot site - lead B2B novo] --> PIPE[Pipeline B2B / demanda represada]
-      MAN[Carol manual] --> DESK[Canal/Inbox da Locação]
-    end
+    A1["Cliente reporta problema<br/>WhatsApp · VOLL · chatbot"]:::cli --> A2["Demanda registrada<br/>no Inbox da Locação"]:::adm
+    A2 --> A3["Carol e Fábio triam<br/>e definem a prioridade"]:::adm
+    A3 --> B1["Mecânico pega a OS<br/>da fila por prioridade"]:::mec
+    B1 --> B2["Vai a campo · diagnostica<br/>laudo + FOTO antes"]:::mec
+    B2 --> D1{"Precisa peça<br/>ou serviço pago?"}:::dec
+    D1 -- sim --> C1["Carol monta o orçamento"]:::adm
+    C1 --> D2{"Cliente aprova<br/>pelo link?"}:::dec
+    D2 -- não --> X1["OS encerrada e registrada"]:::adm
+    D2 -- sim --> D3{"Tem a peça<br/>no baú?"}:::dec
+    D3 -- não --> S1["Pedido de peça no app<br/>Carol aprova"]:::est
+    S1 --> D4{"Peça disponível?"}:::dec
+    D4 -- não --> S2["Registra DEMANDA REPRESADA<br/>subsídio à compra"]:::est
+    D1 -- não --> E1["Executa o serviço<br/>baixa a peça contra a OS"]:::mec
+    D3 -- sim --> E1
+    D4 -- sim --> E1
+    E1 --> B3["Laudo de fechamento<br/>FOTO depois · aceite do cliente"]:::mec
+    B3 --> F1["Fatura: mensalidade<br/>+ serviço + peça"]:::fin
+    F1 --> D5{"Cliente pagou?"}:::dec
+    D5 -- sim --> F2["OS concluída e cobrada"]:::fin
+    D5 -- não --> F3["Inadimplência<br/>alerta ao financeiro"]:::fin
+    B1 --> P1["Painéis e KPIs<br/>Fábio · Carol · Financeiro · Gestão"]:::pan
+    F1 --> P1
+    S2 --> P1
 
-    DESK --> OS[2. Ordem de Serviço de campo]
-    OS -->|mecânico em campo| LAUDO[Laudo diagnóstico + foto antes]
-    LAUDO --> ORC[3. Orçamento]
-    ORC -->|link durável| CLI[Aprovação do cliente]
-    CLI --> EXEC[Execução + consumo de peça]
-    EXEC --> BAU[(4. Custódia de peças no baú)]
-    EXEC --> FECH[Laudo de fechamento + foto depois]
-    FECH --> FAT[5. Faturamento: mensalidade + serviço + peça]
-    FAT --> FIN[Financeiro / inadimplência]
-
-    BAU -.->|reposição modelo Obras| COMPRAS[Solicitação de peça → aprovação Carol]
-    COMPRAS -.->|OS não atendida por falta| REPRES[Medição de demanda represada]
-
-    OS --> PAINEL[6. Painéis: Fábio / Carol / Financeiro / Gestão]
-    FAT --> PAINEL
-    BAU --> PAINEL
+    classDef cli fill:#e9eaff,stroke:#3F45D8,color:#1b1d29
+    classDef adm fill:#fdf1da,stroke:#cf8500,color:#1b1d29
+    classDef mec fill:#eef7df,stroke:#5a9216,color:#1b1d29
+    classDef est fill:#f1eaff,stroke:#7a4fd0,color:#1b1d29
+    classDef fin fill:#ffe6ea,stroke:#d04a5a,color:#1b1d29
+    classDef dec fill:#ffffff,stroke:#8a8f9e,color:#1b1d29
+    classDef pan fill:#eef0f4,stroke:#7b8194,color:#1b1d29
 ```
+
+**Legenda de cores (papéis):** azul = Cliente / demanda · laranja = Carol (administrativo) · verde = Mecânico (campo) · roxo = Estoque / peças · vermelho = Financeiro · cinza = Painéis · branco (losango) = ponto de decisão.
 
 **Os 10 módulos** (detalhados na Seção 5):
 
