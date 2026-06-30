@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Plano — Locação Corporativa de Bikes · Lev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:#3F45D8; --indigo-dk:#2b30a8; --green:#A0C818; --ink:#1c1e2a;
+  --muted:#5b5f72; --line:#e6e7f0; --bg:#f6f7fb; --card:#ffffff;
+  --maxw:880px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Nunito',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.62;font-size:16.5px}
+a{color:var(--indigo);text-decoration:none}
+a:hover{text-decoration:underline}
+.topbar{background:linear-gradient(120deg,var(--indigo) 0%,var(--indigo-dk) 70%);color:#fff;padding:30px 24px 26px}
+.topbar .wrap{max-width:var(--maxw);margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.3px}
+.brand .dot{width:14px;height:14px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(160,200,24,.25)}
+.topbar h1{margin:14px 0 6px;font-size:30px;font-weight:900;line-height:1.15}
+.topbar .meta{opacity:.9;font-size:14.5px;font-weight:600}
+.topbar .conf{display:inline-block;margin-top:14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:4px 12px;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:.4px}
+.layout{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:270px 1fr;gap:34px;padding:28px 24px 80px}
+nav.toc{position:sticky;top:18px;align-self:start;max-height:calc(100vh - 36px);overflow:auto;font-size:13.7px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 14px}
+nav.toc h4{margin:2px 6px 10px;font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
+nav.toc a{display:block;color:var(--muted);padding:5px 8px;border-radius:8px;font-weight:600;border-left:2px solid transparent}
+nav.toc a:hover{background:#f1f2fb;color:var(--ink);text-decoration:none}
+nav.toc a.h3{padding-left:20px;font-weight:600;font-size:13px}
+nav.toc a.active{color:var(--indigo);background:#eef0ff;border-left-color:var(--indigo)}
+article{max-width:var(--maxw);background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 40px 48px;box-shadow:0 1px 3px rgba(20,22,50,.04)}
+article h1{font-size:25px;font-weight:900;margin:34px 0 8px;padding-bottom:0;border:0}
+article h2{font-size:21px;font-weight:800;margin:40px 0 10px;padding-top:18px;border-top:2px solid var(--line)}
+article h2:first-of-type{border-top:0}
+article h3{font-size:17.5px;font-weight:800;margin:26px 0 8px;color:var(--indigo-dk)}
+article h4{font-size:15px;font-weight:800;margin:18px 0 6px}
+article p{margin:10px 0}
+article ul,article ol{margin:10px 0;padding-left:22px}
+article li{margin:5px 0}
+article strong{font-weight:800}
+blockquote{margin:16px 0;padding:10px 18px;background:#f3f8e6;border-left:4px solid var(--green);border-radius:0 10px 10px 0;color:#3f4a18}
+blockquote p{margin:4px 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:#eef0ff;color:var(--indigo-dk);padding:1.5px 6px;border-radius:6px;font-weight:600}
+pre{background:#0f1120;color:#e7e9f5;border-radius:12px;padding:16px 18px;overflow:auto;font-size:12.7px;line-height:1.5}
+pre code{background:none;color:inherit;padding:0;font-weight:400}
+table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px;display:block;overflow:auto}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:#f0f1fb;font-weight:800}
+tr:nth-child(even) td{background:#fafbff}
+hr{border:0;border-top:2px solid var(--line);margin:30px 0}
+.mermaid{background:#fbfcff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:18px 0;text-align:center;overflow:auto}
+.foot{max-width:var(--maxw);margin:0 auto;color:var(--muted);font-size:13px;text-align:center;padding:0 24px 50px}
+@media (max-width:980px){.layout{grid-template-columns:1fr;padding:18px 14px 60px}nav.toc{display:none}article{padding:10px 18px 36px}}
+@media print{
+  body{background:#fff;font-size:11.5px}
+  .topbar{background:var(--indigo)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  nav.toc,.foot .noprint{display:none}
+  .layout{grid-template-columns:1fr;max-width:100%;padding:0}
+  article{border:0;box-shadow:none;padding:0;max-width:100%}
+  h1,h2,h3{break-after:avoid}
+  table,pre,.mermaid,blockquote{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <div class="brand"><span class="dot"></span> LEV · Tecnologia</div>
+  <h1>Sistema de Locação Corporativa de Bicicletas</h1>
+  <div class="meta">Plano detalhado para validação · 29/06/2026</div>
+  <span class="conf">DOCUMENTO INTERNO — não divulgar</span>
+</div></div>
+<div class="layout">
+  <nav class="toc"><h4>Índice</h4><div id="tocList"></div></nav>
+  <article id="content"></article>
+</div>
+<div class="foot"><span class="noprint">Dica: use <strong>Ctrl/Cmd + P</strong> para gerar um PDF deste plano · </span>Gerado por Tecnologia Golev</div>
+
+<script id="md" type="text/markdown">
+# Plano — Sistema de Locação Corporativa de Bicicletas (Intranet Lev)
+
+> **Status:** plano detalhado para validação. Execução vem depois.
+> **Autor:** Tecnologia Golev (Victor) com apoio de IA.
+> **Data:** 2026-06-29.
+> **Fontes:** Reunião 29/06/2026 (Yuri Santana × Victor — diagnóstico do setor) e Reunião 26/06/2026 (Curi/condomínio — produto futuro de bikes compartilhadas). Mapeamento técnico da intranet (7 subsistemas) + crítica de viabilidade.
+
+---
+
+## 0. Como ler este documento
+
+- **Seções 1–3:** contexto, diagnóstico e visão geral. Leia para entender o problema.
+- **Seções 4–6:** o sistema em si — atores, módulos detalhados, modelo de dados. É o coração do "tudo que o sistema deve contemplar".
+- **Seções 7–9:** como isso encaixa no que já existe (reúso), a realidade da integração Sankhya, e os riscos.
+- **Seção 10:** decisões que dependem de você/Rodrigo/Jean **antes** de codar.
+- **Seção 11:** sequenciamento sugerido (ondas) — o "depois pensamos na execução", já rascunhado.
+
+Princípio que atravessa o plano inteiro: **Supabase-first**. O estado vivo da locação (contrato, frota, OS, peças, cobrança) mora na nossa base; o Sankhya é tratado como **sistema de registro fiscal/cadastral de leitura** e só recebe escrita nos marcos fiscais, atrás de flag — porque a escrita de documento no ERP já foi provada e **abandonada** no projeto de Obras por causa dos gatilhos fiscais (detalhe na Seção 8).
+
+---
+
+## 1. O que é "Locação Corporativa" na Lev
+
+Setor que **aluga bicicletas (e e-bikes) para empresas** mediante **mensalidade + serviço/peça**, com manutenção feita por mecânicos próprios que vão a campo. Não é venda; é locação recorrente com assistência.
+
+**Clientes hoje (B2B):** Zona Sul (3 bases/mercados, frota numerada por chassi), Claro, Vivo, Google, e mais ~2 empresas. Modelo: cliente aluga, paga mensalidade, e a Lev faz manutenção preventiva/corretiva no local do cliente.
+
+**Estrutura da equipe:**
+
+| Papel | Pessoa | Função |
+|---|---|---|
+| Líder | Fábio | Coordena tudo; gargalo operacional (muita coisa só anda com ele presente; gera ~5 "diários" manuais) |
+| Administrativo | Carol | "Mini-Lev sozinha": monta OS/orçamento no Sankhya, fala com cliente e mecânicos no WhatsApp, controla ponto/passagem, compra peça na rua, replica dados no Notion |
+| Mecânicos (3) | — | Vão de moto (2 motos cada) a campo; preparam/customizam bikes, fazem manutenção/revisão; carregam peças no baú |
+| Apoio (novo) | Alexandre | Ex-estoquista (período de experiência 90 dias); ajuda na estruturação, fica em São Cristóvão |
+
+**Setores que a locação cruza:** Fiscal, Compras, Estoque, Oficina Central (OC), Restauração, atendimento. (Yuri: "envolve mais setores que o e-commerce".)
+
+**Há também um produto adjacente, futuro:** bikes **compartilhadas em condomínio** (parceria **Curi**, modelo E-bike L) — app do morador (destravar/travar, GPS, bateria, caução no cartão), painel do síndico, contrato de manutenção pós-garantia. Mesmo setor, mesma equipe de campo, mas é **outro produto** (B2C/condomínio) e **não entra no MVP corporativo** (Seção 5, M10).
+
+---
+
+## 2. Diagnóstico — dores atuais (do diagnóstico do Yuri)
+
+1. **Tudo manual e espalhado.** Demanda nasce em **grupo de WhatsApp** (Zona Sul) ou no **VOLL** (demais). Carol "traduz" do WhatsApp para o Sankhya e ainda replica no Notion → **o mesmo trabalho feito 3×**.
+2. **Sem OS fácil para o mecânico.** Mecânicos só "jogam no grupo" o que fizeram, sem evidência estruturada → **disputas com o cliente** ("fez/não fez", "aconteceu/não aconteceu").
+3. **Sem controle do estoque móvel (baú da moto).** Sem inventário, sem número de série, sem registro de consumo nem devolução. **Única fuga não controlada de produto** — reforçada por um **incidente de segurança recente** com um funcionário. O inspetor (Schubert) e a Anne pediram **controle de tudo que entra e sai** + **evidência (foto) antes e depois**.
+4. **Compra reativa.** Falta peça básica (câmara de ar, pastilha de freio); solicitação de crédito demora 2–3 dias; cliente espera. **Não se mede demanda represada nem venda perdida** por falta de estoque.
+5. **Carol sobrecarregada** com tarefas repetitivas; **Fábio é gargalo** (processos dependem da presença física dele).
+6. **Financeiro sem visibilidade de inadimplência.** "Está na mão do financeiro, eu nem olho" (Fábio). Hoje a cobrança é um **e-mail** para o financeiro emitir boleto (mensalidade + serviço + peça); não há controle formal de inadimplência.
+7. **Módulo de locação do Sankhya foi descartado** — caro (~R$ 6–7 mil/mês, escalando por contrato) e pouco flexível. Decisão: **construir interno** no Lev.
+8. **VOLL como integração foi descartada** — fornecedor difícil de contatar; "o Lev tá ficando muito maneiro, não quero mais integração de fora".
+
+**Objetivo central acordado na reunião:** _"ter uma interface com o cliente e organizar os processos dentro do setor de locação corporativa"_ — começando pela **parte administrativa (Carol)** e depois a **parte prática (mecânicos)**, com micro-processos que funcionem isolados e depois se conectem.
+
+---
+
+## 3. Visão do sistema
+
+Um módulo de intranet em `/intranet/locacao` que digitaliza o ciclo completo da locação corporativa: **cliente/contrato/frota → entrada de demanda → OS de campo → orçamento/aprovação → execução com controle de peças → faturamento → painéis**. Mobile-first para o mecânico, desktop para Carol/Fábio/financeiro.
+
+```mermaid
+flowchart TD
+    subgraph Entrada["1. Entrada de demanda"]
+      WA[Grupo WhatsApp cliente] --> DESK
+      VOLL[VOLL / chamado] --> DESK
+      CHAT[Chatbot site - lead B2B novo] --> PIPE[Pipeline B2B / demanda represada]
+      MAN[Carol manual] --> DESK[Canal/Inbox da Locação]
+    end
+
+    DESK --> OS[2. Ordem de Serviço de campo]
+    OS -->|mecânico em campo| LAUDO[Laudo diagnóstico + foto antes]
+    LAUDO --> ORC[3. Orçamento]
+    ORC -->|link durável| CLI[Aprovação do cliente]
+    CLI --> EXEC[Execução + consumo de peça]
+    EXEC --> BAU[(4. Custódia de peças no baú)]
+    EXEC --> FECH[Laudo de fechamento + foto depois]
+    FECH --> FAT[5. Faturamento: mensalidade + serviço + peça]
+    FAT --> FIN[Financeiro / inadimplência]
+
+    BAU -.->|reposição modelo Obras| COMPRAS[Solicitação de peça → aprovação Carol]
+    COMPRAS -.->|OS não atendida por falta| REPRES[Medição de demanda represada]
+
+    OS --> PAINEL[6. Painéis: Fábio / Carol / Financeiro / Gestão]
+    FAT --> PAINEL
+    BAU --> PAINEL
+```
+
+**Os 10 módulos** (detalhados na Seção 5):
+
+| # | Módulo | Dor que resolve | Onda |
+|---|---|---|---|
+| M1 | Clientes, contratos e frota corporativa | Sem cadastro estruturado de quem aluga o quê | 1 |
+| M2 | Entrada de demanda (Inbox/Desk + lead B2B) | Demanda perdida no WhatsApp; 3× retrabalho | 1–2 |
+| M3 | Ordem de Serviço de campo (mobile, áudio→IA, foto) | Sem OS fácil; sem evidência; disputas | 1 |
+| M4 | Orçamento + aprovação durável do cliente | Aprovação por WhatsApp some; "não fez" | 1 |
+| M5 | **Custódia de peças no baú da moto** | Desvio/perda; pedido do Schubert/Anne | 1 |
+| M6 | Reposição de peças (modelo Obras) + demanda represada | Compra reativa; falta de peça básica; cegueira | 2 |
+| M7 | Faturamento (mensalidade recorrente + serviço + peça) + inadimplência | Cobrança por e-mail; financeiro às cegas | 2 |
+| M8 | Painéis e KPIs | Fábio gargalo; sem visibilidade | 1–2 |
+| M9 | Integração fiscal Sankhya (espelho, atrás de flag) | Carol digita 2–3× | 3 |
+| M10 | **Bikes compartilhadas em condomínio (Curi)** — produto separado | App morador, IoT, caução | Separado |
+
+---
+
+## 4. Atores, papéis e controle de acesso (RBAC)
+
+Reúsa o padrão de **ACL por CPF** da intranet (`admin_permissions` + `getIntranetCpf` + OTP por WhatsApp), com papéis próprios da locação:
+
+| Papel | Quem | Pode |
+|---|---|---|
+| `locacao_admin` | Victor, Fábio | Tudo: contratos, frota, OS, peças, faturamento, painéis |
+| `locacao_coordenador` | Fábio | Aprovar OS/orçamento, despachar mecânicos, ver inadimplência |
+| `locacao_admin_op` | Carol | Montar orçamento, aprovar pedido de peça, falar com cliente, faturar |
+| `locacao_mecanico` | 3 mecânicos | App de campo: pegar OS, laudo+foto, pedir peça, baixar peça do baú |
+| `locacao_financeiro` | Financeiro | Ver faturas, marcar pagamento, inadimplência |
+| `locacao_gestor_cliente` | Gestor de frota **do cliente** (Claro/Google) | Ver **só as bikes/OS/faturas da própria conta** (multi-tenant) |
+
+> ⚠️ O `locacao_gestor_cliente` é **RBAC multi-tenant novo** — nenhum subsistema atual (CRM `vendedor/gestor`, Desk `loja`) cobre "o cliente externo vê só a frota dele". Precisa ser desenhado com isolamento rígido por `conta_id` (não misturar com o permissionamento "qualquer CPF autenticado" que o estoque/chat usam).
+
+Todas as tabelas `locacao_*` seguem o padrão **RLS service-role-only** (RLS ON + `REVOKE` anon/authenticated, sem policies); todo acesso passa por `/api/intranet/locacao/*` com validação de CPF + papel.
+
+---
+
+## 5. Módulos detalhados
+
+> Cada módulo: **objetivo · escopo · fluxo · dados-chave · reúso · dependências/gotchas**.
+
+### M1 — Clientes corporativos, contratos e frota
+
+**Objetivo:** ter a fonte de verdade de _quem aluga, o quê, sob qual contrato_.
+
+**Escopo / o que contempla:**
+- **Conta corporativa** (1 CNPJ → cruza com `TGFPAR.CODPARC` por leitura): Zona Sul, Claro, Vivo, Google…
+- **Bases/endereços do cliente** (Zona Sul tem 3 bases; bikes podem transitar entre elas — **não assumir local fixo**).
+- **Contrato**: mensalidade por bike, condições, vigência, modelo de cobrança (ver M7), SLA de atendimento.
+- **Frota**: cada bike (numerada por **chassi**), modelo (geralmente **L plus**, mais robusta), customizações (ex.: cargueira "pino-bola" da Zona Sul), base atual, status (`ativa`/`manutenção`/`recolhida`).
+- **Condutores/usuários do cliente** (quem usa a bike, para o gestor de frota do cliente).
+- **Provisionamento de bike**: fluxo de _solicitar bike à Oficina Central / Restauração / Expedição → OC monta → mecânico customiza → entra em campo_ (registra a origem: zero, usada-restaurada).
+
+**Dados-chave:** `locacao_conta`, `locacao_base`, `locacao_contrato`, `locacao_bike`, `locacao_condutor` (Seção 6).
+
+**Reúso:** cruzamento CNPJ→CODPARC pelo padrão do CRM (`src/lib/crm/sankhya-cross.ts`); cadastro de bike por chassi já existe (`AD_EQUIPBIKE`/`AD_EQUIPCAD`, leitura + insert provados). Layout/cards via `IntranetPageLayout`.
+
+**Gotchas:** `AD_EQUIPBIKE` é **insert-only** (sem UPDATE in-place via API) e ~10% das bikes não têm chassi → **rastrear o ativo alugado por `contrato`/`locacao_bike` no Supabase**, não por titularidade no Sankhya (decisão D7).
+
+---
+
+### M2 — Entrada de demanda (Inbox da Locação + lead B2B)
+
+**Objetivo:** capturar toda demanda num só lugar e transformá-la em tarefa/OS — acabar com o "3× retrabalho".
+
+**Escopo / o que contempla:**
+- **Inbox de atendimento** dos clientes que hoje falam por **grupo de WhatsApp** (Zona Sul) → reusar o **Lev Desk** (inbox multi-agente Cloud API): conversa 1-1 cliente↔número da locação, atribuição, timeline, busca, mídia.
+- **Entrada VOLL/chamado**: substituir a integração VOLL (descartada) por uma entrada simples no Lev (formulário/registro) — _"vai atender o que a VOLL faz"_.
+- **Captura de lead B2B novo**: o chatbot do site **já roteia** "aluguel corporativo/frota/empresa" para o canal `locacao_corporativa` (IVR "Opção 6", central 5521980220130) e gera lead. Plugar esse lead num **pipeline B2B** (prospecção de novos contratos).
+- **Da demanda → OS:** toda mensagem do cliente vira (ou anexa a) uma **OS** (M3), com a conversa linkada.
+
+**Dados-chave:** reusa `desk_conversations`/`desk_messages`; novo `locacao_demanda` (ponte conversa→OS) e `locacao_lead_b2b`.
+
+**Reúso:** **Lev Desk** inteiro (migs 164-170: inbox, atribuição, realtime, templates HSM, mídia, busca FTS pt). Captura via `src/lib/crm/desk-capture.ts`. Lead já existe no chatbot (`promptManager.ts`).
+
+**Dependências/gotchas:**
+- **Lev Desk Fase 0 (Meta/WABA) está bloqueada** (verificação Business, número, ~2–4 semanas). Sem ela, o inbox real do WhatsApp não liga. **Mitigação:** começar a OS (M3) independente do canal; o número da locação pode entrar quando a Fase 0 destravar.
+- **Janela 24h da Meta:** mensagem proativa fora de 24h exige **template HSM aprovado** — mesma trava que pausou o "acionamento" e o menu VOLL. Acionar o mecânico/cliente "do nada" por WhatsApp **não fecha sem template**.
+
+---
+
+### M3 — Ordem de Serviço de campo (o coração operacional)
+
+**Objetivo:** dar ao mecânico uma OS fácil no celular, com **evidência técnica** que encerra disputas e alimenta faturamento e estoque.
+
+**Escopo / o que contempla:**
+- **Board/lista de OS** com **prioridade** (a bike "não pode ficar parada" = prejuízo). Mecânicos são intercambiáveis → modelo "puxar tarefa da fila" (qualquer um pega).
+- **Programação diária dos mecânicos** (matriz pessoa × dia × base × tarefa) — reduz dependência do Fábio.
+- **OS no celular** (formulário mobile): tipo (preventiva/corretiva/preparação), bike (chassi), base, problema relatado.
+- **Laudo de diagnóstico** (antes): **foto** da peça quebrada + descrição → pedido do Schubert/Anne.
+- **Relato por áudio → IA → OS/laudo:** mecânico fala, a IA transcreve e estrutura (peças, serviços) — reúso direto do `src/lib/crm/audio-extract.ts` (Whisper + extração JSON).
+- **Laudo de fechamento** (depois): **foto** do serviço concluído + checklist.
+- **Vínculo serviço↔cliente↔data** (comprova que o mecânico esteve lá), com **empilhamento de OS por cliente/bike** (histórico).
+- **Aprovação na hora** (cenário comum: cliente aprova e o serviço sai imediato).
+
+**Dados-chave:** `locacao_os`, `locacao_os_item` (serviço/peça), `locacao_os_laudo` (diagnóstico|fechamento + fotos), `locacao_programacao`.
+
+**Reúso:** o **modelo de OS de campo do Obras** (`docs/obras/07-manutencao-e-chamados.md` + `08-custos-e-relatorios.md`) é o análogo **certo** (357 OS/2025, priorização GUT, matriz de programação) — **não** o Kanban de vendas do CRM. Áudio→IA do CRM. Fotos via bucket privado + retenção (padrão `estoque_conferencia`).
+
+**Gotchas:** a OS hoje é montada **manualmente por Carol no Sankhya**. Aqui ela passa a nascer rica no Supabase; **se/como espelhar no Sankhya é decisão fiscal (M9/D2)** — não pré-requisito do MVP.
+
+---
+
+### M4 — Orçamento e aprovação durável do cliente
+
+**Objetivo:** orçamento formal com aceite **durável** do cliente (não some no WhatsApp).
+
+**Escopo / o que contempla:**
+- Carol (ou IA, a partir do laudo) **monta o orçamento** (serviços + peças com preço).
+- Envio ao cliente por **e-mail/link** (não só WhatsApp): cliente clica e **aprova/reprova** → fica registrado (quem, quando, IP).
+- **Aceite registrado** encerra a disputa "mandei fazer / não mandei".
+- Suporta o **aprovar-na-hora** (mecânico em campo) e o assíncrono (gestor aprova depois).
+- Pós-aprovação: OS sai para execução; valores fluem para faturamento (M7).
+
+**Dados-chave:** `locacao_orcamento`, `locacao_orcamento_item`, `locacao_aprovacao` (token, status, timestamps).
+
+**Reúso:** padrão de **grant/link durável** já usado no chatbot (`createDocLinkGrant`) e e-mail branded (Resend, `lev_email_brand_kit`). Token de aprovação igual ao QR/token do CRM.
+
+**Gotchas:** o cliente "só quer comunicação" (não quer portal pesado) → link de aprovação **um clique**, sem login.
+
+---
+
+### M5 — Custódia de peças no baú da moto (dor nº 1)
+
+**Objetivo:** controlar o estoque móvel em posse dos mecânicos, eliminando a "fuga não controlada de produto".
+
+> Conceito-chave: **não é transferência entre dois depósitos fixos** — é **estoque consignado em posse de pessoa móvel** ("carteira de peças por mecânico"). É um modelo de **custódia**: saldo por mecânico, baixa contra OS, devolução, recontagem/acerto.
+
+**Escopo / o que contempla:**
+- Cada **baú** (mecânico) é um **local de estoque** com **mini-inventário** (poucas peças, 1 de cada).
+- **Carregar/levar** peça: registra saída do estoque central → para o baú (com número de série quando aplicável).
+- **Consumir** peça: baixa **contra a OS** (liga peça → serviço → cliente).
+- **Devolver** peça não usada (hoje não devolvem — o sistema cria o fluxo).
+- **Recontagem/acerto** periódico (conferência do baú) → divergência vira evento auditável.
+- **Número de série** por peça crítica (bateria, controladora) — rastreabilidade que o Schubert pediu ("saiu com uma, voltou com outra").
+
+**Dados-chave:** `locacao_custodia_saldo` (mecânico × produto × série), `locacao_custodia_mov` (entrada/baixa/devolução/acerto), reusa fotos/seriais da conferência.
+
+**Reúso:** workflow de **conferência de mercadorias** (migs 263-265: entrada/saída, foto, **OCR de série** chassi/motor/bateria, audit log). Posição de estoque (`estoque_posicao`, mig 196) para o saldo central.
+
+**Gotchas:** **transferência inter-depósito não existe** no código — é build novo. Não modelar como `estoque_transferencia` genérica; modelar como **custódia por colaborador** (o valor está em "quem está com a peça e o que ela virou").
+
+---
+
+### M6 — Reposição de peças (modelo Obras) + medição de demanda represada
+
+**Objetivo:** acabar com a compra reativa e **medir** o que se perde por falta de peça.
+
+**Escopo / o que contempla:**
+- **Pedido de peça pelo celular** (mecânico): adiciona itens de um **catálogo** (de-para apelido→Sankhya), gera pedido, **Carol só revisa e aprova** — **exatamente** o fluxo do Obras (Júlio→Naire).
+- **Busca semântica** de material (embeddings) para resolver o de-para apelido→`CODPROD`.
+- **Demanda represada:** quando uma OS **não pôde ser atendida por falta de peça**, registrar isso (não fechar a OS "com o que tem" e perder o sinal). Acumular: "X serviços represados", "Y bikes/contratos parados por falta de pastilha".
+- **Subsídio à compra:** relatório de consumo + represamento por peça → Compras decide comprar **200 mil e não 20 mil** com base em dado, não em reação. (Rodrigo e Anne já curtiram a ideia.)
+
+**Dados-chave:** `locacao_pedido_peca`, `locacao_pedido_item`, `locacao_represamento`; catálogo reusando `obras_material_catalogo`.
+
+**Reúso:** **fluxo de solicitação do Obras** (telas + APIs + catálogo + aprovação 2-fases + embeddings) é o template direto. Mark-and-sweep do `sync-estoque.mjs`.
+
+**Gotchas:** o de-para Obras→Sankhya está **0/89 preenchido** (curadoria pendente) — a locação terá o **mesmo pré-requisito de dados** (curar de-para de peças de bike). A escrita do pedido no Sankhya (TOP 401) **baixa estoque automaticamente** e está atrás da flag `OBRAS_REQUISICAO_SANKHYA_LIVE` (OFF) — para a locação isso é **M9/Onda 3**, não MVP. No MVP, o pedido de peça vive no Supabase e dispara aviso/e-mail para Carol/Compras (como o Obras faz hoje).
+
+---
+
+### M7 — Faturamento (mensalidade + serviço + peça) e inadimplência
+
+**Objetivo:** automatizar a cobrança composta e dar **visibilidade de inadimplência** ao financeiro.
+
+**Escopo / o que contempla:**
+- **Mensalidade recorrente** por bike/contrato.
+- **Cobrança variável por evento:** serviço avulso + peça consumida (da OS aprovada).
+- **Fatura consolidada** por cliente/mês (mensalidade + Σserviços + Σpeças).
+- **(Opcional/futuro)** o modelo de **crédito/caução** que o Fábio mencionou ("paga mensalidade + um crédito que vai descontando serviço/peça") — **incerto, depende do Rodrigo** (D1). Modelar como _carteira de crédito por contrato_ se confirmado.
+- **Inadimplência:** máquina de estados (em dia → atrasado → suspenso), painel para o financeiro, alerta.
+- **Ponte com o financeiro:** hoje é um e-mail → boleto. O sistema pode (a) automatizar a recorrente via gateway, e (b) consolidar os variáveis numa fatura que o financeiro emite. Decisão D1/D2.
+
+**Dados-chave:** `locacao_fatura`, `locacao_fatura_item`, `locacao_pagamento`, (opcional) `locacao_credito_carteira`.
+
+**Reúso:** **Lev Prime é um motor de assinatura recorrente já em produção** (`src/lib/levprime/`): Pagar.me (`pagarme.ts`, `pagarme-billing.ts`, planos V5), Mercado Pago preapproval (`mercado-pago.ts`), `subscription-store.ts`, webhook HMAC. **A mensalidade da locação é "Lev Prime com outro rótulo"** — avaliar reusar **antes** de cogitar NF recorrente no Sankhya (que o Jean classificou como "pesada").
+
+**Gotchas:** **faturamento composto** (mensalidade fixa + variável por evento) **não tem análogo pronto** — o Lev Prime cobre só a parte fixa; o "carrinho variável sobre assinatura" é build novo. **Inadimplência/dunning** = zero cobertura hoje. **Caução** (condomínio) usa **pré-autorização/hold de cartão**, que **nenhum gateway no código faz hoje** (só cobrança/assinatura) → fluxo novo (e é do M10, não daqui).
+
+---
+
+### M8 — Painéis e KPIs
+
+**Objetivo:** tirar a operação da cabeça do Fábio e dar números a todos.
+
+**Escopo / o que contempla:**
+- **Fábio/coordenação:** OS abertas por prioridade, programação do dia, bikes paradas, SLA.
+- **Carol:** fila de aprovação (orçamento + pedido de peça), pendências, faturas a fechar.
+- **Financeiro:** inadimplência, faturas, recorrência.
+- **Gestão (Rodrigo/Anne):** ocupação da frota, faturamento por cliente, **demanda represada / venda perdida**, consumo de peça.
+- **Gestor de frota do cliente:** estado das bikes da própria conta, histórico de OS, faturas.
+
+**Reúso:** RPC de **dashboard stats do Desk** (FRT/TMA/by-agent em JSONB) como base; `IntranetPageLayout` + cards glassmorphic.
+
+---
+
+### M9 — Integração fiscal Sankhya (espelho, atrás de flag)
+
+**Objetivo:** refletir os marcos fiscais no Sankhya **sem** travar o produto na escrita do ERP.
+
+**Postura recomendada (ver Seção 8):**
+- **Leitura:** já pronta e viva (parceiro, bike, estoque, TOP). Usar à vontade.
+- **Escrita de cadastro** (parceiro/bike): pronta (insert), usar com cuidado (insert-only).
+- **Escrita de documento** (OS/pedido/NF de locação): **NÃO no MVP.** Espelhar só na **Onda 3**, atrás de flag (igual `OBRAS_REQUISICAO_SANKHYA_LIVE`, default OFF, dry-run), **depois** de resolver: TOP/TIPMOV de locação (D3), credencial dedicada não-Victor (D4), appkey próprio (anti-SPOF), teste do gatilho de estoque.
+
+---
+
+### M10 — Bikes compartilhadas em condomínio (Curi) — **produto separado**
+
+**Objetivo:** registrar o escopo do produto de condomínio para não contaminar o MVP corporativo, e deixá-lo pronto para virar projeto próprio.
+
+**Escopo / o que contempla (da reunião Curi):**
+- **App do morador:** login/cadastro, **conta por unidade habitacional** (modelo "Prime Video": 1 responsável + dependentes), **cartão de crédito obrigatório (caução)**, destravar/travar bike, ver **nível de bateria** antes de escolher, **regra de 24h** para devolução (senão bike trava / cobra taxa), **avaliação + relato de problema** ao fim do uso (com foto).
+- **Painel do síndico:** **GPS**, bateria, **desligar bike remotamente** (sumiço), gestão da frota, manutenção por km/tempo, uso (quem/quanto/para quê).
+- **Seguro:** Lev tem seguradora parceira (acidente + roubo); 1 ano no contrato, depois condomínio negocia (Schubert é a ponte).
+- **Manutenção pós-garantia:** contrato de prestação de serviço (mecânico visita periodicamente — modelo Vivo/Net/Claro/Google; loja Lev São Cristóvão como base/autorizada).
+- **Guia de boas práticas** (bateria, carregamento) — co-marketing Lev + Curi.
+- **Cronograma:** empreendimento ~3 anos; **lançamento ~outubro**; **mockup visual do painel/app pedido para o mês que vem** (não funcional).
+
+**Dependências que o tiram do MVP corporativo:**
+- **IoT de trava (lock/unlock) NÃO EXISTE.** O servidor GPS (`src/server/gps-tcp-server.ts`) é **só inbound** (login/location/status/alarm); **não há comando downstream (0x80)**. O rastreador atual (QS111R) **rastreia, não atua** → travar/destravar = **hardware novo + firmware + protocolo bidirecional**.
+- **Caução = pré-autorização de cartão** → fluxo de pagamento não-implementado.
+- **App consumidor** = greenfield (a intranet GPS é só para staff).
+
+**O que dá para entregar já (sem hardware):** o **mockup visual** do painel do síndico/app (deliverable do Victor para a Curi) — reusando os componentes de mapa/frota (`GeoHeatmap`, painel de rastreamento) como base estática.
+
+---
+
+## 6. Modelo de dados proposto (Supabase, `locacao_*`)
+
+Esquema novo, **RLS service-role-only**, numerado a partir da próxima migration livre. Núcleo do MVP:
+
+```
+locacao_conta            (id, codparc_sankhya, cnpj, nome, gestor_contato, ativo)
+locacao_base             (id, conta_id→, nome, endereco, lat, lng)              -- p/ Zona Sul 3 bases
+locacao_contrato         (id, conta_id→, vigencia_ini, vigencia_fim,
+                          modelo_cobranca[mensalidade|mensalidade_credito],
+                          mensalidade_por_bike, sla, status)
+locacao_bike             (id, contrato_id→, chassi, modelo, customizacoes[],
+                          base_id→, status[ativa|manutencao|recolhida], codequip_sankhya)
+locacao_condutor         (id, conta_id→, nome, contato)                          -- usuários do cliente
+
+locacao_demanda          (id, conta_id→, bike_id→, origem[whatsapp|voll|chatbot|manual],
+                          desk_conversa_id, descricao, criado_em)
+locacao_lead_b2b         (id, origem[chatbot|manual], empresa, contato, etapa, temperatura)
+
+locacao_os               (id, demanda_id→, bike_id→, conta_id→, tipo[preventiva|corretiva|preparacao],
+                          prioridade, mecanico_cpf, status, abertura, fechamento)
+locacao_os_item          (id, os_id→, tipo[servico|peca], descricao, codprod_sankhya, qtde, valor)
+locacao_os_laudo         (id, os_id→, fase[diagnostico|fechamento], texto, audio_key, criado_por)
+locacao_os_foto          (id, os_id→, laudo_id→, storage_key, legenda)           -- foto antes/depois
+locacao_programacao      (id, data, mecanico_cpf, base_id→, os_id→, ordem)
+
+locacao_orcamento        (id, os_id→, total, status[rascunho|enviado|aprovado|reprovado])
+locacao_orcamento_item   (id, orcamento_id→, descricao, qtde, valor)
+locacao_aprovacao        (id, orcamento_id→, token, status, decidido_em, ip)
+
+locacao_custodia_saldo   (id, mecanico_cpf, codprod_sankhya, serie, qtde)        -- baú
+locacao_custodia_mov     (id, mecanico_cpf, codprod_sankhya, serie,
+                          tipo[carga|baixa_os|devolucao|acerto], os_id→, qtde, ts, ator)
+locacao_pedido_peca      (id, os_id→, mecanico_cpf, status[pendente|aprovado|recusado])
+locacao_pedido_item      (id, pedido_id→, descricao, codprod_sankhya, qtde)
+locacao_represamento     (id, os_id→, codprod_sankhya, qtde_faltante, registrado_em)
+
+locacao_fatura           (id, conta_id→, competencia, total, status[aberta|enviada|paga|atrasada])
+locacao_fatura_item      (id, fatura_id→, tipo[mensalidade|servico|peca], ref_os_id, valor)
+locacao_pagamento        (id, fatura_id→, gateway, status, pago_em)
+locacao_credito_carteira (id, contrato_id→, saldo, ...)                          -- opcional (D1)
+
+locacao_evento           (id, ts, entidade, entidade_id, tipo, ator, payload jsonb)  -- audit log
+locacao_acl              (cpf, papel, conta_id NULL, ativo)                       -- RBAC multi-tenant
+```
+
+> **Condomínio (M10) — esquema separado** (`condominio_*`): `condominio_empreendimento`, `condominio_unidade`, `condominio_conta`, `condominio_bike` (IoT), `condominio_uso` (corrida), `condominio_caucao`, `condominio_seguro`. Fora do MVP.
+
+---
+
+## 7. Reúso da plataforma — mapa módulo → o que já existe
+
+| Módulo | Reusa | Estado |
+|---|---|---|
+| M1 Frota | `sankhya-cross` (CNPJ→CODPARC), `AD_EQUIPBIKE`/`AD_EQUIPCAD` (leitura+insert), `IntranetPageLayout` | Pronto p/ leitura |
+| M2 Demanda | **Lev Desk** (migs 164-170), `desk-capture`, lead `locacao_corporativa` do chatbot | Desk OK; **Meta Fase 0 bloqueada** |
+| M3 OS campo | **Modelo OS do Obras** (`docs/obras/07,08`), `crm/audio-extract` (áudio→IA), fotos (conferência) | Modelo pronto; build novo |
+| M4 Orçamento | `createDocLinkGrant` (link durável), Resend branded, token CRM | Padrões prontos |
+| M5 Custódia baú | **Conferência** (migs 263-265: foto+OCR série+audit), `estoque_posicao` | Conferência OK; custódia = build novo |
+| M6 Reposição | **Fluxo Obras** (catálogo+aprovação+embeddings) | Telas/APIs prontas; de-para a curar |
+| M7 Faturamento | **Lev Prime** (`src/lib/levprime/*`: Pagar.me/MP recorrente) | Recorrente OK; composto/dunning = build novo |
+| M8 Painéis | RPC dashboard do Desk, cards glass | Pronto |
+| M9 Sankhya | `sankhyaClient` (OAuth2+cache), helpers CRUD | Leitura OK; **escrita doc = Onda 3** |
+| M10 Condomínio | GPS (`gps_*`, painel rastreamento), `GeoHeatmap` | **Sem lock IoT; sem app consumidor** |
+
+---
+
+## 8. Integração Sankhya — realidade e estratégia (crítico)
+
+**O que ESTÁ pronto e vivo (leitura):** queries DbExplorer via OAuth2 (token L2 cacheado no Supabase, `sankhya_token_cache`), parceiro (TGFPAR), bike (AD_EQUIPBIKE/AD_EQUIPCAD), estoque (TGFEST), TOP (TGFTOP).
+
+**O que está pronto mas limitado (escrita):** cadastro de parceiro e bike via `DatasetSP.save` (provado 19/06). **Limitação dura:** em entidade-detalhe o `DatasetSP.save` **só INSERE** — **não há UPDATE in-place** (cai em ORA-01400). Mudança de estado de ativo no ERP = manual ou delete+reinsert arriscado.
+
+**O que NÃO está pronto (e é o maior risco do plano):** **gerar documento** (TGFCAB/TGFITE — OS, pedido, NF). No projeto de **Obras isso foi provado ponta-a-ponta (NUNOTA 632107) e DEPOIS ABANDONADO** porque o gatilho `TRG_UPT_TGFEST` **baixa estoque automaticamente** e a natureza fiscal (TOP, parceiro/produto ativo, situação tributária) é frágil. **Hoje o Obras nem escreve no ERP** — manda e-mail para a Naire comprar manual. A locação vai esbarrar **exatamente** nos mesmos gatilhos ao tentar faturar/emitir documento.
+
+**Riscos sistêmicos:**
+- **SPOF de credencial** (`tecnologia@`): 3 apagões em junho; um de 5h por renomear env var. Botar faturamento de cliente corporativo sobre esse ponto único é perigoso → **appkey dedicado** antes da Onda 3.
+- **Atribuição = CODUSU 252 (Victor):** toda escrita sai "alterado por VICTORCRUZ" (já assustou cliente). **Faturar locação no nome pessoal do Victor é inaceitável em auditoria** → credencial de locação (depende do Jean, não é self-service).
+
+**Estratégia adotada no plano:** **Sankhya = registro fiscal/cadastral de leitura (read + insert-once)**; estado mutável de locação no Supabase; espelhar no ERP só nos marcos fiscais, na Onda 3, atrás de flag/dry-run.
+
+---
+
+## 9. Riscos e dependências externas
+
+| Risco / dependência | Impacto | Mitigação |
+|---|---|---|
+| **Escrita de documento Sankhya** (gatilho de estoque, sem UPDATE) | Trava faturamento/OS no ERP | Supabase-first; espelho só Onda 3 atrás de flag |
+| **SPOF + atribuição Sankhya** (Victor/252, apagões) | Faturamento e leitura caem juntos | Appkey + usuário dedicados antes da Onda 3 |
+| **Meta/WABA Fase 0** (Lev Desk) | Sem inbox WhatsApp real; sem proativo | OS independe do canal; template HSM p/ proativo |
+| **Janela 24h Meta** | Acionar mecânico/cliente "do nada" não fecha | Template aprovado; senão, push intranet/e-mail |
+| **VOLL** (fornecedor ausente) | Não integrar | Já decidido: construir no Lev |
+| **IoT de trava (condomínio)** | Lock/unlock não existe | Hardware novo; fora do MVP |
+| **Caução (hold de cartão)** | Pré-autorização não implementada | Fluxo novo; M10/separado |
+| **Seguradora** (sinistro de bike alugada) | Processo de sinistro/franquia indefinido | Definir com Schubert/seguradora antes do condomínio |
+| **Governança / silo** (time da Anne, RD Station, CRM restrito) | Lead B2B pode duplicar/colidir | Definir dono do lead (D6) antes de codar |
+| **De-para de peças vazio** | Pedido de peça sem CODPROD | Curadoria (Carol) — pré-requisito de dados |
+| **Sync estoque em Mac Mini** (não Netlify) | Queda da máquina = sem snapshot | Redundância gpu-box já existe |
+
+---
+
+## 10. Decisões em aberto (precisam de Victor / Rodrigo / Jean **antes** de codar)
+
+1. **Onde vive a mensalidade:** motor próprio (**Lev Prime**/Pagar.me) **ou** NF recorrente no Sankhya? (Jean já sinalizou que NF mensal automática é "pesada".) → define toda a Onda 2.
+2. **Locação emite documento fiscal no Sankhya no MVP**, ou **só registra no Supabase e concilia depois**? → recomendação: Supabase-first; precisa do seu OK.
+3. **Qual TOP/TIPMOV da locação** (venda? serviço? comodato?) — define se a bike sai do estoque e a natureza fiscal. (Andreia/Jean.) Bloqueador da Onda 3.
+4. **Credencial Sankhya dedicada** para locação (não CODUSU 252/Victor). (Jean; ~semanas.)
+5. **Modelo de cobrança:** mensalidade simples **ou** mensalidade + **crédito/caução** que desconta serviço/peça (o "pacote preditivo" do Fábio)? Depende do Rodrigo.
+6. **Dono do lead corporativo de locação:** vive no **CRM próprio** (restrito) ou num **pipeline B2B separado**? Evitar colidir com o desligamento do RD Station e o território do time da Anne.
+7. **Rastreio do ativo alugado:** por **titularidade** (`AD_EQUIPBIKE`, insert-only, ~10% sem chassi) **ou** por **contrato** (`locacao_bike` no Supabase)? → recomendação: por contrato.
+8. **Condomínio/IoT:** compra-se hardware de trava (lock/unlock) **ou** o condomínio fica fora do escopo de software por ora? Decisão de investimento.
+
+---
+
+## 11. Sequenciamento sugerido (rascunho de execução)
+
+Critério: **maior dor × menor dependência externa primeiro**. Tudo que depende de escrita-Sankhya, IoT, Meta-proativo ou seguradora = fast-follow ou produto separado.
+
+### Onda 1 — MVP (dor pura, zero dependência externa, tudo em Supabase)
+1. **M1 — Clientes/contratos/frota** (Sankhya só leitura p/ cruzar CNPJ→CODPARC).
+2. **M3 — OS de campo + programação diária** (modelo Obras; áudio→IA; foto antes/depois). Não escreve no Sankhya.
+3. **M4 — Orçamento + aprovação durável** (link de um clique).
+4. **M5 — Custódia de peças no baú** (a dor de desvio; conferência + OCR de série).
+5. **M8 (parcial) — Painéis** de OS e baú para Fábio/Carol.
+
+### Onda 2 — Fast-follow (pagamento e canal, sem depender de escrita-Sankhya)
+6. **M7 — Mensalidade recorrente** reusando **Lev Prime**; depois faturamento composto (serviço+peça) e **sinalização** de inadimplência (sem corte automático).
+7. **M6 — Reposição de peças** (fluxo Obras) + **medição de demanda represada**.
+8. **M2 (pleno) — Inbox WhatsApp** quando a Fase 0 Meta destravar; **pipeline B2B** plugando o lead do chatbot.
+
+### Onda 3 — Travada por governança/terceiros (só quando destravar)
+9. **M9 — Espelho fiscal no Sankhya** (NF/pedido de locação) — **só após** appkey dedicado + usuário não-Victor + TOP validado + teste do gatilho de estoque. Flag/dry-run obrigatórios.
+10. **Acionamento proativo** (mecânico/cliente) por WhatsApp — depende de template Meta aprovado.
+
+### Fora do escopo da locação corporativa (produto separado)
+11. **M10 — Condomínio Curi / app do morador / lock-unlock / caução / seguro** — depende de **hardware IoT novo** e **pré-autorização de cartão**. Entregável imediato possível: **mockup visual** do painel/app (deliverable para a Curi no mês que vem).
+
+---
+
+## 12. Anexos
+
+### 12.1 Lições do alinhamento (do Yuri/Victor) que guiam a arquitetura
+- **Micro-processos primeiro, conectar depois** — cada módulo funciona isolado; integração quando tudo estiver "bonitinho".
+- **Começar pela Carol (administrativo), depois mecânicos** — mas M3/M5 já entram na Onda 1 porque são a evidência que destrava cobrança e estoque.
+- **Daily de 30 min** (Victor + Yuri + Alexandre) para validar incrementos — cadência de entrega.
+- **Não criar mais um silo** — tudo dentro da infraestrutura do Lev, sem integração externa nova (VOLL fora).
+
+### 12.2 Perguntas a fazer para a Carol / Fábio (dever de casa já pedido à Carol)
+- Descrever o fluxo dela passo a passo (onde há repetição / retrabalho).
+- Quais peças mais faltam e com que frequência (base do de-para e do represamento).
+- Como é hoje o "diário" do Fábio (5 manuais) — o que cada um contém.
+- Regras de contrato por cliente (o que pode/não pode, SLA, quem aprova).
+
+### 12.3 Fontes (não versionadas — sensíveis)
+- Transcrição reunião 29/06/2026 (diagnóstico do setor) e 26/06/2026 (Curi/condomínio) — em `~/Downloads` / scratchpad. Detalhes de pessoas/segurança **não** reproduzidos aqui por sensibilidade.
+- Mapeamento técnico (7 subsistemas) + crítica de viabilidade: workflow `locacao-corp-discovery`.
+
+---
+
+_Próximo passo sugerido: validar as 8 decisões em aberto (Seção 10) e aprovar o escopo da Onda 1 para começar pelo M1 + M3._
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+const raw = document.getElementById('md').textContent;
+marked.setOptions({gfm:true, breaks:false});
+const el = document.getElementById('content');
+el.innerHTML = marked.parse(raw);
+
+// Convert ```mermaid code blocks into mermaid divs
+el.querySelectorAll('pre > code.language-mermaid').forEach(code=>{
+  const div=document.createElement('div');
+  div.className='mermaid';
+  div.textContent=code.textContent;
+  code.parentElement.replaceWith(div);
+});
+mermaid.initialize({startOnLoad:false, theme:'neutral', flowchart:{useMaxWidth:true, htmlLabels:true}});
+try{ await mermaid.run({nodes:[...document.querySelectorAll('.mermaid')]}); }catch(e){ console.error('mermaid',e); }
+
+// slug + ids for headings, build TOC (h2 + h3)
+const toc=document.getElementById('tocList');
+const used={};
+const heads=[...el.querySelectorAll('h2,h3')];
+heads.forEach(h=>{
+  let s=h.textContent.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  if(used[s]) s+='-'+(++used[s]); else used[s]=1;
+  h.id=s;
+  const a=document.createElement('a');
+  a.href='#'+s; a.textContent=h.textContent.replace(/\s+/g,' ').trim();
+  if(h.tagName==='H3') a.className='h3';
+  toc.appendChild(a);
+});
+// scrollspy
+const links=[...toc.querySelectorAll('a')];
+const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.remove('active')); const a=map.get(e.target.id); if(a){a.classList.add('active'); a.scrollIntoView({block:'nearest'});} }});
+},{rootMargin:'-10% 0px -80% 0px'});
+heads.forEach(h=>obs.observe(h));
+</script>
+</body>
+</html>
